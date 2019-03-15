@@ -1,16 +1,20 @@
 <html>
 <head>
+    <style>
+
+    </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
     <body>
-        <a href="" class="btn btn-success">Create Post</a>
+        <a href="" class="btn btn-success d-block mx-auto">Create Post</a>
         <table class="table">
   <thead>
     <tr>
+      <th scope="col"># Pagination Bonus</th>
       <th scope="col">Id</th>
       <th scope="col">Title</th>
       <th scope="col">Posted by</th>
-      <th scope="col">Created by</th>
+      <th scope="col">Created at</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
