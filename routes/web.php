@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', 'PostsController@index')->name("posts.index"); //this is the index
-Route::get('/posts/create', 'PostsController@store')->name("posts.store"); //this is to create a form 
+Route::get('/posts/create', 'PostsController@create')->name("posts.create"); //this is to create a form 
+Route::post('/posts', 'PostsController@store')->name('posts.store'); //this is storing in database

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
     <body>
-        <a href="" class="btn btn-success d-block mx-auto">Create Post</a>
+        <a href="{{route('posts.create')}}" class="btn btn-success d-block mx-auto">Create Post</a>
         <table class="table">
   <thead>
     <tr>
@@ -28,7 +28,7 @@
       <td>
         <form method="POST">
           @csrf
-          @method
+          
           <input href="" class="btn btn-info" value="View">
           <input href="" class="btn btn-primary" value="Edit">
           <input href="" class="btn btn-danger" value="Delete">
