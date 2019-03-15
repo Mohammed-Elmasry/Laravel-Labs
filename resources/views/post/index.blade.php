@@ -19,16 +19,20 @@
     </tr>
   </thead>
   <tbody>
-  @foreach ($Posts as $Post)
+  @foreach ($Posts as $Post) <!--this passing Posts from controller-->
     <tr>
-      <th scope="row">{{$Post->id}}</th>
+      <th scope="row">{{$Post->id}}</th> 
       <td>{{$Post->title}}</td>
       <td>{{$Post->User->id}}</td>
       <td>{{$Post->Created_at}}</td>
       <td>
-        <a href="" class="btn btn-info">View</a>
-        <a href="" class="btn btn-primary">Edit</a>
-        <a href="" class="btn btn-danger">Delete</a>
+        <form method="POST">
+          @csrf
+          @method
+          <input href="" class="btn btn-info" value="View">
+          <input href="" class="btn btn-primary" value="Edit">
+          <input href="" class="btn btn-danger" value="Delete">
+        </form>
       </td>
     </tr>
     @endforeach

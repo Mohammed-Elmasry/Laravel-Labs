@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', 'PostsController@index')->name("posts.index"); //this is the index 
+Route::get('/posts', 'PostsController@index')->name("posts.index"); //this is the index
+Route::get('/posts/create', 'PostsController@store')->name("posts.store"); //this is to create a form 
