@@ -26,13 +26,16 @@
       <td>{{$Post->User->id}}</td>
       <td>{{$Post->Created_at}}</td>
       <td>
-        <form method="POST">
+        
+        <a href="{{route('posts.edit',[$Post->id])}}" class="btn btn-primary">Edit</a>
+        <form method="POST" action="{{route('posts.destroy',$Post->id)}}">
           @csrf
-          
-          <input href="" class="btn btn-info" value="View">
-          <input href="" class="btn btn-primary" value="Edit">
-          <input href="" class="btn btn-danger" value="Delete">
+          @method('DELETE')
+          <!-- <button class="btn btn-info">View</button>
+          <button class="btn btn-primary">Edit</button> -->
+          <button type="submit" class="btn btn-danger"onclick="return confirm('Do you really want to delete this entry?');">Delete</button>
         </form>
+          
       </td>
     </tr>
     @endforeach
