@@ -21,3 +21,4 @@ Route::post('/posts', 'PostsController@store')->name('posts.store'); //this is s
 Route::get('posts/{post}/edit','PostsController@edit')->name('posts.edit');
 Route::put('posts/{post}','PostsController@update')->name('posts.update');
 Route::delete('/posts/{post}/delete', 'PostsController@destroy')->name('posts.destroy'); //this is deleting from database
+Route::get('/posts/{post}','PostsController@show')->name('posts.show');

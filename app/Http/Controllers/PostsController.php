@@ -13,7 +13,7 @@ class PostsController extends Controller
 
         return view('post.index',
         [
-            'Posts'=> Post::all()
+            'Posts'=> Post::paginate(4)
         ]);
     }
 
@@ -48,5 +48,13 @@ class PostsController extends Controller
     {
         $post->update($request->all());
         return redirect()->route('posts.index');
-}
+    }
+
+    public function show(Post $post)
+    {
+        return view('post.show',[
+            'post' => $post
+        ]);
+    
+    }
 }

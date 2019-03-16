@@ -8,11 +8,11 @@
        @method('PUT')
        <div class="form-group">
            <label for="exampleInputEmail1">Title</label>
-           <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+           <input name="title" value="{{$post->title}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
        </div>
        <div class="form-group">
            <label for="exampleInputPassword1">Description</label>
-           <textarea name="description" class="form-control"></textarea>
+           <textarea name="description" value="{{$post->description}}" class="form-control"></textarea>
        </div>
 
         <div class="form-group">

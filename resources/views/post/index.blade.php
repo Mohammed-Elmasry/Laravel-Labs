@@ -22,11 +22,12 @@
   @foreach ($Posts as $Post) <!--this passing Posts from controller-->
     <tr>
       <th scope="row">{{$Post->id}}</th> 
+      <td>{{$Post->id}}</td>
       <td>{{$Post->title}}</td>
-      <td>{{$Post->User->id}}</td>
-      <td>{{$Post->Created_at}}</td>
+      <td>{{$Post->user->name}}</td>
+      <td>{{$Post->created_at}}</td>
       <td>
-        
+      <a href="{{route('posts.show',[$Post->id])}}" class="btn btn-info">View</a>
         <a href="{{route('posts.edit',[$Post->id])}}" class="btn btn-primary">Edit</a>
         <form method="POST" action="{{route('posts.destroy',$Post->id)}}">
           @csrf
@@ -35,7 +36,6 @@
           <button class="btn btn-primary">Edit</button> -->
           <button type="submit" class="btn btn-danger"onclick="return confirm('Do you really want to delete this entry?');">Delete</button>
         </form>
-          
       </td>
     </tr>
     @endforeach
