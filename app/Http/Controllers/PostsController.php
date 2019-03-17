@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Http\Requests\StorePostsRequest;
 
 class PostsController extends Controller
 {
@@ -32,11 +33,15 @@ class PostsController extends Controller
     }
 
     //functional
-    public function store()
+    public function store(StorePostsRequest $request)
     { //function that stores in database
+        //add validation
+
         Post::create(Request()->all());
 
         return redirect()->route('posts.index');
+
+        $validated = $request->validated();
     }
 
     public function destroy(Post $post)
