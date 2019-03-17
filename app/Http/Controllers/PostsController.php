@@ -59,11 +59,12 @@ class PostsController extends Controller
         ]);
     }
 
-    public function update(Request $request, Post $post)
+    public function update(StorePostsRequest $request, Post $post)
     {
         $post->update($request->all());
 
         return redirect()->route('posts.index');
+        $validated = $request->validated();
     }
 
     public function show(Post $post)
