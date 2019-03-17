@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
@@ -11,12 +12,15 @@ class PostsController extends Controller
     //functional
     public function index()
     {
-        Post::simplePaginate(4);
+        /*  return view('post.index',
+         [
+             'Posts' => Post::simplePaginate(4),
+         ]); */
 
-        return view('post.index',
-        [
-            'Posts' => Post::simplePaginate(4),
-        ]);
+        $posts = DB::table('posts')->simplePaginate(5);
+        // dd($posts);
+
+        return view('post.index', ['Posts' => $posts]);
     }
 
     //functional

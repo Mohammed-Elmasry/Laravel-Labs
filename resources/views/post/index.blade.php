@@ -24,7 +24,7 @@
       <th scope="row">{{$Post->id}}</th> 
       <td>{{$Post->id}}</td>
       <td>{{$Post->title}}</td>
-      <td>{{$Post->user->name}}</td>
+      {{-- <td>{{$Post->user_id->name}}</td> --}}
       <td>{{$Post->created_at}}</td>
       <td>
       <a href="{{route('posts.show',[$Post->id])}}" class="btn btn-info">View</a>
@@ -39,6 +39,9 @@
       </td>
     </tr>
     @endforeach
+    <div>
+    {{ $Posts->links() }}
+    </div>
   </tbody>
 </table>
 
