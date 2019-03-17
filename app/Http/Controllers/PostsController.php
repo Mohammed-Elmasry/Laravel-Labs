@@ -42,6 +42,7 @@ class PostsController extends Controller
         return redirect()->route('posts.index');
 
         $validated = $request->validated();
+        dd($validated);
     }
 
     public function destroy(Post $post)
