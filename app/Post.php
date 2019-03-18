@@ -9,7 +9,7 @@ class Post extends Model
     protected $fillable = [
         'title',
         'description',
-        'user_id'
+        'user_id',
     ];
 
     public function user()
@@ -17,4 +17,12 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+            ],
+        ];
+    }
 }
