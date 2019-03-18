@@ -13,7 +13,7 @@
       {{-- <th scope="col"># Pagination Bonus</th> --}}
       <th scope="col">Id</th>
       <th scope="col">Title</th>
-      {{-- <th scope="col">Posted by</th> --}}
+      <th scope="col">Title-slug</th>
       <th scope="col">Created at</th>
       <th scope="col">Actions</th>
     </tr>
@@ -24,7 +24,7 @@
       {{-- <th scope="row">{{$Post->id}}</th>  --}}
       <td>{{$Post->id}}</td>
       <td>{{$Post->title}}</td>
-      {{-- <td>{{$Post->user->name}}</td> --}}
+      <td>{{$Post->slug}}</td>
       <td>{{$Post->created_at}}</td>
       <td>
       <a href="{{route('posts.show',[$Post->id])}}" class="btn btn-info">View</a>
